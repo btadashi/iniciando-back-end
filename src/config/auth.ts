@@ -1,7 +1,8 @@
-/** Aqui jogamos a informação da 'secret' e aproveitamos para colocar também a informação do 'expireIn' */
 export default {
   jwt: {
-    secret: '980dc96e7463c7a4ab8febcc519d74ce',
+    /** Dizemos que o nosso 'secret' pode ser 'default', para fazer com que nossos teste
+     * de 'AuthenticateUserService.spec.ts' passe */
+    secret: process.env.APP_SECRET || 'default',
     expiresIn: '1d',
   },
 };
